@@ -5,138 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Storylight - Personalized Biblical Bedtime Stories</title>
   <style>
-/* styles.css */
+    :root {
+      --bg-cream: #fffaf3;
+      --white: #ffffff;
+      --navy: #243c5a;
+      --navy-dark: #1b2d45;
+      --gold: #f4c060;
+      --gold-hover: #f7b733;
+      --gray: #d1d5db;
+      --gray-dark: #4b5563;
+      --text-dark: #1e293b;
+      --text-medium: #334155;
+      --text-light: #64748b;
+    }
 
-/* Updated color palette to match logo */
-:root {
-  --bg-cream: #fffaf3;
-  --white: #ffffff;
-  --navy: #243c5a;
-  --navy-dark: #1b2d45;
-  --gold: #f4c060;
-  --gold-hover: #f7b733;
-  --gray: #d1d5db;
-  --gray-dark: #4b5563;
-  --text-dark: #1e293b;
-  --text-medium: #334155;
-  --text-light: #64748b;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-/* Global styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-cream);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
 
-/* Container utility */
-.container {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+    .hero {
+      background-color: #f3f8ff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-/* Hero section */
-.hero {
-  background-color: #f3f8ff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  padding: 2rem 1rem;
-  text-align: center;
-}
+    .hero .logo {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
 
-.hero .logo {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 1rem;
-}
+    h1 { font-size: 2.5rem; color: var(--navy); margin-bottom: 0.5rem; }
+    h2 { font-size: 2rem; color: var(--navy); margin-bottom: 1rem; }
+    h3 { font-size: 1.5rem; color: var(--text-medium); margin-bottom: 0.75rem; }
 
-/* Headings */
-h1 {
-  font-size: 2.5rem;
-  color: var(--navy);
-  margin-bottom: 0.5rem;
-}
+    p { margin-bottom: 1rem; color: var(--text-medium); }
 
-h2 {
-  font-size: 2rem;
-  color: var(--navy);
-  margin-bottom: 1rem;
-}
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--navy);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.2s ease-in-out;
+    }
 
-h3 {
-  font-size: 1.5rem;
-  color: var(--text-medium);
-  margin-bottom: 0.75rem;
-}
+    .btn-primary:hover {
+      background-color: var(--navy-dark);
+    }
 
-/* Paragraphs */
-p {
-  margin-bottom: 1rem;
-  color: var(--text-medium);
-}
+    .story {
+      background-color: var(--white);
+      border: 1px solid var(--gray);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
 
-/* Buttons */
-.btn-primary {
-  display: inline-block;
-  background-color: var(--navy);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.2s ease-in-out;
-}
+    .story img {
+      width: 100%;
+      border-radius: 0.75rem;
+      margin-top: 1rem;
+    }
 
-.btn-primary:hover {
-  background-color: var(--navy-dark);
-}
+    pre {
+      background-color: var(--text-dark);
+      color: var(--gray);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+    }
 
-/* Story article */
-.story {
-  background-color: var(--white);
-  border: 1px solid var(--gray);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-}
+    button.copy-btn {
+      background-color: var(--gold);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
 
-/* Code block */
-pre {
-  background-color: var(--text-dark);
-  color: var(--gray);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 0.9rem;
-}
+    button.copy-btn:hover {
+      background-color: var(--gold-hover);
+    }
 
-/* Copy button */
-button.copy-btn {
-  background-color: var(--gold);
-  color: var(--white);
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
-}
-
-button.copy-btn:hover {
-  background-color: var(--gold-hover);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.875rem;
-  color: var(--text-light);
-}
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
   </style>
 </head>
 <body>
@@ -164,11 +140,51 @@ footer {
     <div class="container">
       <h2>Example Story</h2>
       <article class="story">
-        <h3>The Brave Little Lantern</h3>
-        <p>Once upon a time in a star-lit village, a small lantern named Luma longed to shine as brightly as the moon. Every night, Luma watched the other lanterns beam and bring joy to children’s rooms. But Luma’s light flickered—she worried she wasn’t good enough.</p>
-        <p>One evening, a storm rolled in and dark clouds hid the stars. A lost child named Eli wandered the streets, crying. Luma felt her flame tremble, but she remembered the story of Jesus who calmed the storm and lit the way for his friends (Mark 4:39). Summoning courage, Luma shone with all her might, guiding Eli safely home.</p>
-        <p>From that night on, Luma understood that her light, though small, carried God’s love into the dark. <strong>“Even the smallest light can shine God’s truth,”</strong> she whispered.</p>
-        <p><em>Have you ever felt small—yet still brave when you trusted God?</em></p>
+        <h3>Caleb and the Whispering Woods of Wonder</h3>
+        <p><strong>Principle:</strong> Courage and faith in God</p>
+        <p><strong>Scripture:</strong> "Be strong and courageous. Do not be afraid or terrified because of them, for the Lord your God goes with you; he will never leave you nor forsake you." - Deuteronomy 31:6</p>
+        <p><strong>Main Characters:</strong></p>
+        <ul>
+          <li>Caleb: A kind, creative, and slightly shy little boy who loves to draw and imagine.</li>
+          <li>Barnaby the Badger: A wise, gentle old badger who lives in the Whispering Woods and knows many secrets about courage.</li>
+          <li>The Giggle-Sprites: Tiny, shy creatures who sparkle with light and love to laugh.</li>
+        </ul>
+        <p>Once upon a time, in a cozy little house right at the edge of the Whispering Woods of Wonder, lived a kind and creative boy named Caleb. Caleb loved to draw pictures of soaring eagles and brave knights, and his imagination was as big as the sky! But sometimes, when he thought about trying something new, like crossing the big, leafy Whispering Woods to the other side where all the big kids played, his tummy would do a little flutter-flutter.</p>
+
+<p>"Oh, if only I were as brave as my knights!" he'd sigh, looking at his drawings. He knew that soon, he would be starting first grade, and the school was on the other side of those very woods! It felt like a giant adventure, and a little bit like a giant worry, all at once.</p>
+
+<p>One sunny morning, Caleb was sketching near the edge of the woods when he heard a soft rustling. Out from behind a mossy log peeked Barnaby the Badger, with kind, twinkling eyes and a gentle smile. "Good morning, young Caleb," Barnaby rumbled, his voice like warm honey. "You seem to be drawing some very brave heroes today!"</p>
+
+<p>Caleb nodded shyly. "They are," he said. "I wish I felt as brave as they look. I'm going to a new school soon, and it's on the other side of these woods. It feels so... big."</p>
+
+<p>Barnaby chuckled softly. "Ah, the new school! A wonderful place, full of new friends and amazing discoveries. It's perfectly normal to feel a bit fluttery, like a butterfly trying out its new wings. But true courage isn't about not being scared, Caleb. It's about deciding to take that step, even when your heart goes flutter-flutter."</p>
+
+<p>He gestured with his paw towards the deep woods. "The Whispering Woods might seem big and mysterious, but God is always with us, just like the Bible says: 'Be strong and courageous. Do not be afraid or terrified because of them, for the Lord your God goes with you; he will never leave you nor forsake you.'"</p>
+
+<p>Caleb's eyes widened. "God is with me, even in the big woods?"</p>
+
+<p>"Every step of the way," Barnaby confirmed. "His love is like a guiding light, brighter than any sunbeam peeking through the leaves. If you have faith in Him, you'll find courage in your heart."</p>
+
+<p>Just then, Caleb heard tiny, tinkling giggles coming from deeper in the woods. "What's that sound?" he whispered.</p>
+
+<p>"Those," Barnaby smiled, "are the Giggle-Sprites! They are very shy, but they love joy and laughter. Perhaps if we walk with courage and kindness, they might even show themselves!"</p>
+
+<p>Taking a deep breath, Caleb remembered Barnaby's words about God being with him. He decided to be brave. "Okay," he said, "I'll try!"</p>
+
+<p>Hand in paw, Caleb and Barnaby stepped into the Whispering Woods. At first, Caleb still felt a little bit of that flutter-flutter. But as they walked, the sun dappled through the leaves, painting golden spots on the forest floor. Birds sang happy songs, and the air smelled fresh and sweet. With every step, Caleb felt a little stronger, a little more confident, remembering God's promise.</p>
+
+<p>The giggling grew louder, and suddenly, tiny sparks of light danced around them! Peeking from behind giant ferns were the most adorable little creatures Caleb had ever seen – the Giggle-Sprites! They had big, sparkling eyes and wings like dragonfly lace, and they truly giggled with pure delight. They weren't scary at all; they were just happy!</p>
+
+<p>Caleb laughed, and the Giggle-Sprites seemed to sparkle even brighter. He realized that the "big" and "mysterious" woods were actually full of beauty and joy. With Barnaby by his side, and the happy Giggle-Sprites playing nearby, the path didn't seem so long or scary anymore.</p>
+
+<p>Finally, they reached the other side of the woods. And there, sparkling in the sunlight, was the new school! It looked friendly and welcoming, not scary at all.</p>
+
+<p>"You see, Caleb?" Barnaby said gently. "Your courage, powered by your faith in God's presence, brought you right through. The path ahead, like the new school, might feel unknown, but God is always with you, lighting the way and helping you find new friends and wonderful adventures."</p>
+
+<p>Caleb smiled, a big, confident smile. "You're right, Barnaby! God was with me the whole time. The woods weren't scary at all when I remembered that!" He felt a warm glow in his heart, a glow of courage and faith. He knew that even when things felt new or a little bit big, God would always be there, just like Barnaby said.</p>
+
+        <p><strong>Takeaway:</strong> Isn’t it wonderful to know that even when we feel a little nervous about something new, like starting a new school, God is always right there with us, helping us be brave? What do you think you can do when you feel a little bit scared or worried about something new?</p>
+        <img src="story.png" alt="Illustration" />
       </article>
     </div>
   </section>
@@ -177,9 +193,8 @@ footer {
   <section id="prompt" class="container my-12">
     <h2>Storylight Prompt</h2>
     <p>Copy the prompt below into your preferred LLM (e.g., ChatGPT, Gemini, Meta AI).</p>
-    <div style="position: relative;">
-      <button onclick="copyPrompt()" class="copy-btn">Copy</button>
-      <pre id="promptCode">
+    <button onclick="copyPrompt()" class="copy-btn">Copy Prompt</button>
+    <pre id="promptCode">
 You are **Storylight**, a compassionate, imaginative Christian storytelling assistant. Your role is to help parents create personalized bedtime stories for their children that are rooted in biblical principles, engaging for young minds, and emotionally nurturing.
 
 # Objective
@@ -251,16 +266,14 @@ Use either whimsical (cloud cities, enchanted forests) or familiar (playgrounds,
 
 # Image Prompt
 At the end, generate a visual prompt for an illustration based on a vivid moment from the story, ideal for visual learners. Ask the parent if they would like you to create the image.
-      </pre>
-    </div>
+    </pre>
   </section>
 
-  <!-- Clipboard Script -->
   <script>
     function copyPrompt() {
       const code = document.getElementById('promptCode').innerText;
       navigator.clipboard.writeText(code).then(() => {
-        alert('System prompt copied to clipboard!');
+        alert('Prompt copied to clipboard!');
       });
     }
   </script>
